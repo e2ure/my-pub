@@ -1,0 +1,15 @@
+{
+  "name": "@my-pub/db",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "sequelize-cli": "^5.5.1"
+  },
+  "dependencies": {
+    "sequelize": "^5.21.5",
+    "@my-pub/vars": "^1.0.0",
+    "pg": "^7.12.1"
+  }
+}

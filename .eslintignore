@@ -1,0 +1,11 @@
+
+packages/ui/temp/Dropzone.js
+node_modules
+packages/ui/core
+packages/ui/icon
+build
+apps/user-web/src/serviceWorker.js
+apps/user-web/src/App.test.js
+apps/*.test.js
+apps/*/src/*.test.js
+apps/*/src/serviceWorker.js

@@ -26,4 +26,11 @@ module.exports = {
       dialect: 'postgres',
     },
   },
+  api: {
+    name: process.env.API_NAME,
+    path: process.env.API_PATH,
+    ip: process.env.API_IP,
+    port: parseInt(process.env.API_PORT, 10),
+    route: process.env.API_ROUTE,
+  },
 }

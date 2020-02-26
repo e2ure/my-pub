@@ -13,8 +13,7 @@ const {
 const vars = require('@my-pub/vars')
 const pjson = require('../package.json')
 
-const { apis, env } = vars
-const { core } = apis
+const { api, env } = vars
 const routes = require('../v1/routes')
 
 const initRoutes = app => {
@@ -76,14 +75,14 @@ module.exports.init = async () => {
     next()
   })
   const server = app
-    .listen(core.port, () => {
+    .listen(api.port, () => {
       launch({
         ENV: env,
-        PORT: core.port,
-        HOST: core.path,
-        IP: core.ip,
+        PORT: api.port,
+        HOST: api.path,
+        IP: api.ip,
         VERSION: pjson.version,
-        NAME: core.name,
+        NAME: api.name,
       })
     })
     .on('error', err => {

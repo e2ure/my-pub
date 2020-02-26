@@ -9,7 +9,6 @@
   "private": true,
   "scripts": {
     "commit":"git-cz"
-
   },
   "dependencies": {},
   "devDependencies": {

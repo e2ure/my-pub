@@ -1,6 +1,5 @@
 const StandardError = require('standard-error')
-const bigdecimal = require('bigdecimal')
-const { jwt } = require('./jwt')
+const { jwt } = require('@my-pub/utils')
 const vars = require('@my-pub/vars')
 const {
   User,

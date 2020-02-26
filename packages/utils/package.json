@@ -1,14 +1,13 @@
 {
-  "name": "@my-pub/auth",
+  "name": "@my-pub/utils",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@my-pub/db": "1.0.0",
-    "@my-pub/utils": "1.0.0",
     "@my-pub/vars": "1.0.0",
-    "bcryptjs": "^2.4.3",
-    "validator": "^12.2.0"
+    "chalk": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "standard-error": "^1.1.0"
   }
 }

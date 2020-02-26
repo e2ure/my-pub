@@ -8,12 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "pre-commit": "lint-staged",
-    "commit": "yarn pre-commit && git-cz",
-    "lint": "eslint .",
-    "format": "yarn run prettier -- --write",
-    "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\"",
-    "validate": "yarn run lint && yarn run prettier -- --list-different"
+    "commit":"git-cz"
   },
   "dependencies": {},
   "devDependencies": {
@@ -22,19 +17,8 @@
     "@commitlint/config-lerna-scopes": "^8.2.0",
     "babel-eslint": "^10.0.3",
     "commitizen": "^4.0.3",
-    "cz-conventional-changelog-emoji": "^0.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.8.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
     "husky": "^3.1.0",
-    "lerna": "^3.20.2",
-    "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1"
+    "lerna": "^3.20.2"
   },
   "workspaces": [
     "packages/*",
@@ -43,12 +27,6 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog-emoji"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn pre-commit",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }

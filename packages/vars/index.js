@@ -11,6 +11,11 @@ dotenv.config({
 module.exports = {
   appName: process.env.APP_NAME,
   env,
+  secrets: {
+    jwt: process.env.JWT_SECRET,
+    encryptionKey: process.env.ENCRYPTION_KEY,
+    encryptionVector: process.env.ENCRYPTION_VECTOR,
+  },
   dbs: {
     postgres: {
       username: process.env.POSTGRES_USERNAME,

@@ -1,4 +1,4 @@
-const {Beer} = require('"@my-pub/drinks')
+const {Beer} = require('@my-pub/drinks')
 
 const create = async (req,res,next)=>{
   try{

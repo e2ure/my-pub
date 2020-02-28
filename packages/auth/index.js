@@ -1,13 +1,12 @@
 const StandardError = require('standard-error')
 const { jwt } = require('@my-pub/utils')
-const vars = require('@my-pub/vars')
 const {
   User,
 } = require('@my-pub/db')
 const bcrypt = require('bcryptjs')
 const validator = require('validator')
 
-async function signup(user) {
+const signup = async user =>  {
   const {
     email,
     password,
@@ -70,7 +69,7 @@ async function signup(user) {
   return data ? data.toJSON() : data
 }
 
-async function login(email, password) {
+const login = async (email, password) => {
   if (!email || !password) {
     throw new StandardError(
       'Para ingresar es requerido el correo y la contraseña',
@@ -108,7 +107,7 @@ async function login(email, password) {
   return data ? data.toJSON() : data
 }
 
-async function logout() {
+const logout = async () => {
   return { message: 'Usuario deslogeado exitosamente' }
 }
 

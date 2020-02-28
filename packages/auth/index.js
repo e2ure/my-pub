@@ -70,7 +70,7 @@ async function signup(user) {
   return data ? data.toJSON() : data
 }
 
-async function login(email, password, roleType, applicationId) {
+async function login(email, password) {
   if (!email || !password) {
     throw new StandardError(
       'Para ingresar es requerido el correo y la contraseña',

@@ -1,4 +1,4 @@
-const { Auth } = require('@my-pub/auth')
+const Auth = require('@my-pub/auth')
 
 async function signup(req, res, next) {
   try {
@@ -15,8 +15,8 @@ async function signup(req, res, next) {
 
 async function login(req, res, next) {
   try {
-    const { email, password, type } = req.body
-    const data = await Auth.login(email, password, type || 'operator')
+    const { email, password } = req.body
+    const data = await Auth.login(email, password)
 
     res.success({
       message: 'Usuario autenticado exitosamente',

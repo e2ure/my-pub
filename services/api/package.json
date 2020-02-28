@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts":{
+    "dev":"nodemon index.js"
+  },
   "dependencies": {
     "@my-pub/auth": "1.0.0",
     "@my-pub/policies": "1.0.0",

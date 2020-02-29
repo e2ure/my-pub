@@ -27,7 +27,13 @@ module.exports = (sequelize, DataTypes) => {
         description: {
           type: DataTypes.STRING,
           allowNull: true,
-        },        
+        },  
+        status: {
+          // 1:Activo, -1:Borrado
+          type: DataTypes.INTEGER,
+          allowNull: false,
+          defaultValue: 1,
+        },      
       },
       {
         tableName: 'Beers',

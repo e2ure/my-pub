@@ -38,6 +38,39 @@ const create = async (beer) => {
   return data ? data.toJSON() : data
 }
 
+const update = async (beer) => {
+  const {id,name,brand,type,volumenOfAlcohol,description,} = beer
+
+  const data = await Beer.findOne({
+    where:{id}
+  })
+
+  if(!data){
+    throw new StandardError('No existe una bebida con el id indicado!', {
+      status: 400,
+    })
+  }
+
+  await data.update({name,brand,type,volumenOfAlcohol,description,})
+  
+  return data ? data.toJSON() : data
+}
+
+const findAll = async (queryOptions) => {
+  const data = await Beer.findAll({ ...queryOptions})
+
+  return data
+}
+
+const findOne = async (queryOptions) => {
+  const data = await Beer.findOne({queryOptions})
+
+  return data ? data.toJSON() : data
+}
+
 module.exports={
   create,
+  update,
+  findAll,
+  findOne,
 }

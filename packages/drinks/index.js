@@ -1,4 +1,4 @@
-const Beer = require('./beer')
+const Beer = require('./drinks/beer')
 
 module.exports = {Beer}
 

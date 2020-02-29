@@ -1,0 +1,45 @@
+{
+  "name": "my-pub",
+  "version": "1.0.0",
+  "description": "PUB management api",
+  "main": "index.js",
+  "repository": "https://github.com/e2ure/my-pub.git",
+  "author": "Emanuel Ureña <emanuel.ure.al@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@commitlint/config-lerna-scopes": "^8.2.0",
+    "babel-eslint": "^10.0.3",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog-emoji": "^0.1.0",
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": "^3.1.0",
+    "lerna": "^3.19.0",
+    "lint-staged": "^9.4.3",
+    "nodeman": "^1.1.2",
+    "pm2": "^4.2.1",
+    "prettier": "^1.19.1"
+  },
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog-emoji"
+    }
+  }
+}

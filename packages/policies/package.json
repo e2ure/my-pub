@@ -1,0 +1,11 @@
+{
+  "name": "@my-pub/policies",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@my-pub/utils": "1.0.0",
+    "standard-error": "^1.1.0"
+  }
+}

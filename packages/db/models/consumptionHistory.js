@@ -8,10 +8,6 @@ module.exports = (sequelize, DataTypes) => {
           primaryKey: true,
           type: DataTypes.INTEGER,
         },
-        lastConsumption: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
         userId: {
             type: DataTypes.INTEGER,
             allowNull: true,

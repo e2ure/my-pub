@@ -1,5 +1,6 @@
 const StandardError = require('standard-error')
 const { jwt } = require('@my-pub/utils')
+const { User } = require('@my-pub/db')
 
 /**
  * Este middleware verifica que se haya declarado un user-token
@@ -15,6 +16,14 @@ async function isLoggedIn(req) {
 
   if (!isApiJWTDeclared) {
     throw new StandardError('JWT token no fue encontrado y es necesario.', {
+      status: 401,
+    })
+  }
+
+  req.user = await User.findOne({ id: req.token.id })
+
+  if (!req.user) {
+    throw new StandardError('El usuario asociado al token no existe.', {
       status: 401,
     })
   }

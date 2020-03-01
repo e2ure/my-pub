@@ -9,12 +9,13 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.INTEGER,
         },
         totalConsume: {
-          type: DataTypes.STRING,
+          type: DataTypes.INTEGER,
           allowNull: false,
         },
         lastConsumption: {
-          type: DataTypes.STRING,
+          type: DataTypes.DATE,
           allowNull: false,
+          defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
         },
         userId: {
             type: DataTypes.INTEGER,
@@ -35,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
           },
           onUpdate: 'CASCADE',
           onDelete: 'SET NULL',
-      },    
+        },    
       },
       {
         tableName: 'UserDrinks',

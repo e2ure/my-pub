@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@my-pub/db": "1.0.0",
     "@my-pub/utils": "1.0.0",
     "standard-error": "^1.1.0"
   }

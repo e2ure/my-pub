@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "4d8555aa-83df-45b2-b0b1-6cb5589a58ee",
+		"name": "My-PUB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "SignUp User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"emanuel.ure.al@gmail.com\",\n    \"password\":\"qwe123\",\n    \"name\":\"Emanuel\",\n    \"lastname\":\"Ureña\",\n    \"secondlastname\":\"Alvarado\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://{{route}}/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"emanuel.ure.al@gmail.com\",\n    \"password\":\"qwe123\"\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "http://{{route}}/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Drinks",
+			"item": [
+				{
+					"name": "Get All Drinks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTgyOTA2NzAwfQ._QmXlIPwGCXwPTGITfh6_4akCRpk46uxMHkcqiEWK1I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{route}}/api/v1/drink/",
+							"protocol": "http",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"drink",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Drink",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTgyOTA2NzAwfQ._QmXlIPwGCXwPTGITfh6_4akCRpk46uxMHkcqiEWK1I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Silver\",\n\t\"brand\":\"Imperial\",\n\t\"type\":\"Clara\",\n\t\"volumenOfAlcohol\":4.5,\n\t\"description\":\"Cerveza clara, con sabor ligero.\"\n}"
+						},
+						"url": {
+							"raw": "http://{{route}}/api/v1/drink/",
+							"protocol": "http",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"drink",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Drink",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTgyOTA2NzAwfQ._QmXlIPwGCXwPTGITfh6_4akCRpk46uxMHkcqiEWK1I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{route}}/api/v1/drink/1",
+							"protocol": "http",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"drink",
+								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Drink",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTgyOTA2NzAwfQ._QmXlIPwGCXwPTGITfh6_4akCRpk46uxMHkcqiEWK1I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Silver\",\n\t\"brand\":\"Imperial\",\n\t\"type\":\"Clara\",\n\t\"volumenOfAlcohol\":4.5,\n\t\"description\":\"Cerveza clara, con sabor ligero.\"\n}"
+						},
+						"url": {
+							"raw": "http://{{route}}/api/v1/drink/0",
+							"protocol": "http",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"drink",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "UserDrinks",
+			"item": [
+				{
+					"name": "Get All User Drinks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTgyOTA2NzAwfQ._QmXlIPwGCXwPTGITfh6_4akCRpk46uxMHkcqiEWK1I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{route}}/api/v1/userdrink/",
+							"protocol": "http",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"userdrink",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User Drink",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTgyOTA2NzAwfQ._QmXlIPwGCXwPTGITfh6_4akCRpk46uxMHkcqiEWK1I",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"drinkId\":1\n}"
+						},
+						"url": {
+							"raw": "http://{{route}}/api/v1/userdrink/",
+							"protocol": "http",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"userdrink",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Drink History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTgyOTA2NzAwfQ._QmXlIPwGCXwPTGITfh6_4akCRpk46uxMHkcqiEWK1I"
+							}
+						],
+						"url": {
+							"raw": "http://{{route}}/api/v1/userdrink/1",
+							"protocol": "http",
+							"host": [
+								"{{route}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"userdrink",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

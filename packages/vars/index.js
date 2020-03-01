@@ -22,7 +22,7 @@ module.exports = {
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DATABASE,
       host: process.env.POSTGRES_HOST,
-      port: process.env.PORT,
+      port: process.env.POSTGRES_PORT,
       dialect: 'postgres',
       protocol: 'postgres',
       database_url: process.env.DATABASE_URL,
@@ -32,7 +32,7 @@ module.exports = {
     name: process.env.API_NAME,
     path: process.env.API_PATH,
     ip: process.env.API_IP,
-    port: parseInt(process.env.API_PORT, 10),
+    port: parseInt(process.env.PORT, 10),
     route: process.env.API_ROUTE,
   },
 }

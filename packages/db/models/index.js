@@ -10,24 +10,35 @@ const {
 const basename = path.basename(__filename)
 const db = {}
 
-const sequelize = new Sequelize(
-  postgres.database,
-  postgres.username,
-  postgres.password,
-  {
-    host: postgres.host,
-    port: postgres.port,
+let sequelize
+if(postgres.database_url){
+  sequelize = new Sequelize(postgres.database_url,{
     dialect: postgres.dialect,
-    protocol: 'postgres',
-    pool: {
-      max: 5,
-      min: 0,
-      idle: 10000,
-      acquire: 30000,
-    },
-    dialectOptions: { ssl: true },
+    protocol: postgres.protocol,
   }
-)
+  )
+}else{
+  sequelize = new Sequelize(
+    postgres.database,
+    postgres.username,
+    postgres.password,
+    {
+      host: postgres.host,
+      port: postgres.port,
+      dialect: postgres.dialect,
+      protocol: postgres.protocol,
+      pool: {
+        max: 5,
+        min: 0,
+        idle: 10000,
+        acquire: 30000,
+      },
+      dialectOptions: { ssl: true },
+    }
+  )
+}
+
+
 
 fs.readdirSync(__dirname)
   .filter(file => {

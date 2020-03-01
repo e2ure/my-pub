@@ -15,6 +15,7 @@ if(postgres.database_url){
   sequelize = new Sequelize(postgres.database_url,{
     dialect: postgres.dialect,
     protocol: postgres.protocol,
+    dialectOptions: { ssl: true },
   }
   )
 }else{

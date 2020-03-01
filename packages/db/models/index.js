@@ -18,6 +18,7 @@ const sequelize = new Sequelize(
     host: postgres.host,
     port: postgres.port,
     dialect: postgres.dialect,
+    protocol: 'postgres',
     pool: {
       max: 5,
       min: 0,

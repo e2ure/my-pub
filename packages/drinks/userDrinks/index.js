@@ -54,22 +54,7 @@ const create = async (drinkId,userId,cuantity,) => {
 const findAll = async (queryOptions) => {
   const userDrinks = await UserDrink.findAll({...queryOptions})
 
-  const data = await Promise.all(
-    userDrinks.map( async userDrink => {
-      const userDrinkData = userDrink.toJSON()
-
-      const consumptionHistory = await ConsumptionHistory.findAll({
-        userId:userDrinkData.userId,
-        beerId:userDrinkData.beerId,
-      })
-
-      userDrinkData.ConsumptionHistory = consumptionHistory
-
-      return userDrinkData
-    })
-  )
-
-  return data
+  return userDrinks
 }
 
 const findOne = async (queryOptions) => {

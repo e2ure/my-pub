@@ -9,7 +9,8 @@
   "private": true,
   "scripts": {
     "commit": "git-cz",
-    "start":"NODE_ENV=production node ./services/api/index.js"
+    "start":"NODE_ENV=production node ./services/api/index.js",
+    "start:dev":"NODE_ENV=development node ./services/api/index.js"
   },
   "dependencies": {},
   "devDependencies": {

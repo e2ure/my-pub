@@ -22,3 +22,4 @@ jobs:
       env:
         CI: true
         POSTGRES_PORT: 5432
+        PORT: 5052

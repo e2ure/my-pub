@@ -21,3 +21,4 @@ jobs:
     - run: yarn start
       env:
         CI: true
+        POSTGRES_PORT: 5432

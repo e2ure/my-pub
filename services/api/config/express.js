@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const bearerToken = require('express-bearer-token')
 const cors = require('cors')
+const helmet = require('helmet')
 const { join } = require('path')
 const socket = require('socket.io')
 const { authenticate } = require('@my-pub/db')
@@ -26,6 +27,9 @@ const initRoutes = app => {
 }
 
 const initMiddlewares = app => {
+  // Configuración de Helmet para seguridad
+  app.use(helmet())
+  
   app.use(express.static(join(__dirname, '../public')))
   app.use(bodyParser.json({ limit: '50mb', extended: true }))
   app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }))
@@ -37,6 +41,9 @@ const initMiddlewares = app => {
         'http://my-pub.net',
         'http://my-pub.com',
       ],
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+      credentials: true
     })
   )
 
@@ -45,6 +52,10 @@ const initMiddlewares = app => {
   app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*')
     res.removeHeader('X-Powered-By')
+    // Agregar headers de seguridad adicionales
+    res.setHeader('X-Content-Type-Options', 'nosniff')
+    res.setHeader('X-Frame-Options', 'DENY')
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains')
     next()
   })
 

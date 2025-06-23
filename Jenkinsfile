@@ -1,24 +1,27 @@
 pipeline {
   agent any
+  triggers {
+    pollSCM('* * * * *') // cada minuto. Luego lo cambiamos a webhook.
+  }
   stages {
-    stage('Clonar Repo') {
+    stage('Checkout') {
       steps {
-        checkout scm
+        git url: 'https://github.com/e2ure/my-pub.git'
       }
     }
     stage('Build') {
       steps {
-        echo "Compilando..."
+        echo 'Construyendo el proyecto...'
       }
     }
-    stage('Test') {
+    stage('Tests') {
       steps {
-        echo "Ejecutando pruebas..."
+        echo 'Ejecutando pruebas...'
       }
     }
     stage('Deploy') {
       steps {
-        echo "Desplegando app..."
+        echo 'Desplegando...'
       }
     }
   }

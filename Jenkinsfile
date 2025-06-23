@@ -1,27 +1,37 @@
 pipeline {
   agent any
-  triggers {
-    pollSCM('* * * * *') // cada minuto. Luego lo cambiamos a webhook.
+
+  environment {
+    IMAGE_NAME = "my-pub-dev"
+    CONTAINER_NAME = "my-pub-container"
   }
+
   stages {
     stage('Checkout') {
       steps {
-        git url: 'https://github.com/e2ure/my-pub.git'
+        checkout scm
       }
     }
-    stage('Build') {
+
+    stage('Install Dependencies') {
       steps {
-        echo 'Construyendo el proyecto prueba...'
+        sh 'npm install'
       }
     }
-    stage('Tests') {
+
+    stage('Build Docker Image') {
       steps {
-        echo 'Ejecutando pruebas...'
+        sh 'docker build -t $IMAGE_NAME .'
       }
     }
-    stage('Deploy') {
+
+    stage('Run Container') {
       steps {
-        echo 'Desplegando...'
+        sh '''
+          docker stop $CONTAINER_NAME || true
+          docker rm $CONTAINER_NAME || true
+          docker run -d --name $CONTAINER_NAME -p 3000:3000 $IMAGE_NAME
+        '''
       }
     }
   }
